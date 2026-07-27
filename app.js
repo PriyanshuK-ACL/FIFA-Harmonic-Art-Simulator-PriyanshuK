@@ -17,14 +17,14 @@ baseRatio: { fx: 2.0, fy: 3.0 },
 timeline: [
 { minute: 0, home: 50, away: 50, event: "Kick-off" },
 { minute: 15, home: 65, away: 35, event: "" },
-{ minute: 30, home: 40, away: 60, event: "" },
+{ minute: 30, home: 60, away: 40, event: "" },
 { minute: 45, home: 50, away: 50, event: "Half Time" },
-{ minute: 60, home: 70, away: 30, event: "" },
-{ minute: 75, home: 35, away: 65, event: "" },
+{ minute: 60, home: 90, away: 10, event: "" },
+{ minute: 75, home: 75, away: 25, event: "" },
 { minute: 90, home: 50, away: 50, event: "Full Time — Extra Time" },
 { minute: 105, home: 80, away: 20, event: "Spain pressing hard" },
-{ minute: 115, home: 95, away: 10, event: "⚽ GOAL! Spain scores in ET!" },
-{ minute: 120, home: 60, away: 40, event: "Final Whistle" }
+{ minute: 110, home: 60, away: 40, event: "⚽ GOAL! Spain scores in ET!" },
+{ minute: 120, home: 30, away: 70, event: "Final Whistle" }
 ]
 },
 "third": {
@@ -32,14 +32,13 @@ title: "England vs France",
 baseRatio: { fx: 3.0, fy: 4.0 },
 timeline: [
 { minute: 0, home: 50, away: 50, event: "Kick-off" },
-{ minute: 12, home: 85, away: 15, event: "⚽ GOAL! England early strike" },
-{ minute: 28, home: 15, away: 85, event: "⚽ GOAL! France equalizer" },
-{ minute: 41, home: 90, away: 10, event: "⚽ GOAL! England retakes lead" },
-{ minute: 55, home: 20, away: 80, event: "⚽ GOAL! France levels again" },
-{ minute: 68, home: 85, away: 15, event: "⚽ GOAL! England score!" },
-{ minute: 82, home: 10, away: 90, event: "⚽ GOAL! France 4th goal!" },
-{ minute: 89, home: 95, away: 5, event: "⚽ GOAL! England seals 6-4 win!" },
-{ minute: 90, home: 50, away: 50, event: "Full Time — 10 Goal Thriller" }
+{ minute: 3, home: 85, away: 15, event: "⚽ GOAL! England early strike" },
+{ minute: 18, home: 15, away: 85, event: "⚽ GOAL! England up two now" },
+{ minute: 45, home: 90, away: 10, event: "⚽ GOAL! Saka scores two goals!" },
+{ minute: 67, home: 20, away: 80, event: "⚽ GOAL! France gets three back quickly" },
+{ minute: 87, home: 85, away: 15, event: "⚽ GOAL! Saka finishes the hattrick!" },
+{ minute: 96, home: 10, away: 90, event: "⚽ GOAL! France 4th goal!" },
+{ minute: 98, home: 95, away: 5, event: "⚽ GOAL! Bellingham seals 6-4 win!" }
 ]
 },
 "capeverde": {
@@ -63,7 +62,7 @@ baseRatio: { fx: 3.0, fy: 2.0 },
 timeline: [
 { minute: 0, home: 50, away: 50, event: "Kick-off" },
 { minute: 25, home: 75, away: 25, event: "England controlling midfield" },
-{ minute: 50, home: 60, away: 40, event: "" },
+{ minute: 55, home: 65, away: 35, event: "England strikes first!" },
 { minute: 78, home: 15, away: 85, event: "⚽ Argentina equalizer!" },
 { minute: 88, home: 10, away: 90, event: "⚽ Argentina comeback winner!" },
 { minute: 90, home: 40, away: 60, event: "Full Time" }
@@ -75,9 +74,9 @@ baseRatio: { fx: 4.0, fy: 3.0 },
 timeline: [
 { minute: 0, home: 55, away: 45, event: "Kick-off" },
 { minute: 20, home: 70, away: 30, event: "Mexico strong start" },
-{ minute: 35, home: 10, away: 90, event: "🟥 RED CARD! Mexico down to 10 men!" },
-{ minute: 60, home: 20, away: 80, event: "England capitalizing on advantage" },
-{ minute: 85, home: 25, away: 75, event: "England sealing victory" },
+{ minute: 40, home: 10, away: 90, event: "Bellingham scores back to back!" },
+{ minute: 70, home: 20, away: 80, event: "Mexico on the comeback" },
+{ minute: 85, home: 25, away: 75, event: "England holding on" },
 { minute: 90, home: 30, away: 70, event: "Full Time" }
 ]
 }
