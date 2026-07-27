@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Match Momentum Harmonograph Suite</title>
+<title>Match Momentum Harmonograph</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="nav-tabs">
-<button class="tab-btn active">Match Momentum Harmonograph</button>
+<button class="tab-btn active">World Cup Momentum Harmonograph</button>
 </div>
 
 <div id="workspace">
 <div id="sidebar">
-<!-- Harmonograph Panel -->
-<div id="panel-harmonograph" class="tab-panel active">
-<h3>World Cup 2026 Match Select</h3>
+<div class="tab-panel active">
+<h3>Select World Cup Match</h3>
 <div class="control-group">
-<div class="control-header"><span>Select Highlight Match</span></div>
-<select id="match-select" class="dropdown-input" onchange="applyMatchPreset(this.value)">
+<select id="match-select" class="dropdown-input" onchange="loadAndPlayMatch(
+this.value)">
+
 <option value="final">Final: Spain 1–0 Argentina (A.E.T.)</option>
 <option value="third">3rd Place: England 6–4 France</option>
 <option value="capeverde">R32: Argentina 3–2 Cape Verde (A.E.T.)</option>
@@ -28,42 +28,40 @@
 </select>
 </div>
 
-<h3>Home Team Pendulum (X Axis)</h3>
-<div class="control-group">
-<div class="control-header"><span>Frequency ($f_x$)</span><span class="control-val" id="f1-val">2.00 Hz</span></div>
-<input type="range" id="f1" min="0.1" max="10" step="0.01" value="2.00">
+<!-- Match Speed Slider -->
+<div class="control-group speed-group">
+<div class="control-header">
+<span>Match Simulation Speed</span>
+<span class="control-val" id="speed-val">1.0x</span>
 </div>
-<div class="control-group">
-<div class="control-header"><span>Phase Shift ($\phi_x$)</span><span class="control-val" id="p1-val">0.00 rad</span></div>
-<input type="range" id="p1" min="0" max="6.28" step="0.05" value="0.00">
-</div>
-
-<h3>Away Team Pendulum (Y Axis)</h3>
-<div class="control-group">
-<div class="control-header"><span>Frequency ($f_y$)</span><span class="control-val" id="f2-val">2.01 Hz</span></div>
-<input type="range" id="f2" min="0.1" max="10" step="0.01" value="2.01">
-</div>
-<div class="control-group">
-<div class="control-header"><span>Phase Shift ($\phi_y$)</span><span class="control-val" id="p2-val">1.57 rad</span></div>
-<input type="range" id="p2" min="0" max="6.28" step="0.05" value="1.57">
+<input type="range" id="speed-slider" min="0.1" max="3.0" step="0.1" value="1.0">
 </div>
 
-<h3>Match Flow / Swings ($f_m$)</h3>
-<div class="control-group">
-<div class="control-header"><span>Modulation Rate</span><span class="control-val" id="f3-val">3.00 Hz</span></div>
-<input type="range" id="f3" min="0.1" max="10" step="0.01" value="3.00">
+<!-- Live Match Telemetry Display -->
+<div class="telemetry-card">
+<div class="telemetry-header">
+<span id="match-title">Spain vs Argentina</span>
+<span id="match-minute" class="minute-badge">00'</span>
+</div>
+<div class="momentum-bar-container">
+<div class="momentum-label"><span>Home Momentum</span><span id="home-val">50%</span></div>
+<div class="bar-bg"><div id="home-bar" class="bar-fill home" style="width: 50%;"></div></div>
+</div>
+<div class="momentum-bar-container">
+<div class="momentum-label"><span>Away Momentum</span><span id="away-val">50%</span></div>
+<div class="bar-bg"><div id="away-bar" class="bar-fill away" style="width: 50%;"></div></div>
+</div>
+<div class="match-event" id="match-event-text">Kick-off</div>
 </div>
 
-<h3>Game Fatigue & Decay</h3>
-<div class="control-group">
-<div class="control-header"><span>Friction Decay ($d$)</span><span class="control-val" id="damp-val">0.0008</span></div>
-<input type="range" id="damp" min="0" max="0.005" step="0.0001" value="0.0008">
+<div class="info-box">
+<p><strong>Harmonograph Physics:</strong> Amplitudes (Ax, Ay) expand based on team momentum. Phase angle shifts (phi) dynamically twist the canvas loops whenever control shifts.</p>
 </div>
 </div>
 
 <div class="action-tray">
 <button class="btn btn-secondary" id="pause-btn">Pause</button>
-<button class="btn btn-primary" id="start-btn">Replay Match Trace</button>
+<button class="btn btn-primary" id="replay-btn">Replay Match Trace</button>
 </div>
 </div>
 
